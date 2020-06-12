@@ -1,0 +1,65 @@
+.wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wrapper__form {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+.wrapper__email,
+.wrapper__password {
+    padding: 8px;
+    font-size: 14px;
+    border: 2px solid #b9b9b9;
+    border-radius: 0px;
+}
+
+.wrapper__email:active,
+.wrapper__email:focus,
+.wrapper__password:active,
+.wrapper__password:focus {
+    outline: none;
+}
+
+.wrapper__password,
+.wrapper__login {
+    margin-top: 10px;
+}
+
+.wrapper__login {
+    border: none;
+    border-radius: 0px;
+    background-color: #9FBAE4;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.wrapper__login:focus {
+    outline: none;
+}
+
+.wrapper__login:hover {
+    background-color: #80a5e2;
+}

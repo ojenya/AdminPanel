@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+    meta(charset = 'utf-8')
+    title Login Page
+    style
+        include ../public/css/auth.css
+    body
+        .wrapper
+            form.wrapper__form(action="/auth", method="post")
+                input.wrapper__email(type="text", id="login", placeholder="Логин", name="login")
+                input.wrapper__password(type="password", id="password", placeholder="Пароль", name="password")
+                button.wrapper__login(type="submit") Войти
