@@ -171,7 +171,7 @@ server.get("/course",authentication(), (request, response) => {
     const uri = "mongodb+srv://j3nqa:093zheka4067@cluster0-ksudn.gcp.mongodb.net/test?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
-        const collection = client.db("schedule").collection("group");
+        const collection = client.db("schedule").collection("groups");
         collection.find().sort( { group_id: 1 } ).toArray(function(err, results) {
             response.render('index', { courses: results })
         })
@@ -184,7 +184,7 @@ server.get("/course/:id", authentication(),(request, response) => {
     const uri = "mongodb+srv://j3nqa:093zheka4067@cluster0-ksudn.gcp.mongodb.net/test?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
-        const collection = client.db("schedule").collection("group");
+        const collection = client.db("schedule").collection("groups");
         collection.find({ course: `${request.params.id}` }).sort( { group_id: 1 } ).toArray(function(err, results) {
 
             // const getCourse = results.filter(e => e.course === request.params.id)
@@ -206,7 +206,7 @@ server.post("/course", authentication(), async function(request, response) {
     const uri = "mongodb+srv://j3nqa:093zheka4067@cluster0-ksudn.gcp.mongodb.net/test?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
-        const collection = client.db("schedule").collection("group");
+        const collection = client.db("schedule").collection("groups");
         collection.insertOne({ course: request.body.course, group_id: `${request.body.group}` })
         client.close();
         response.redirect('/course')
@@ -220,7 +220,7 @@ server.post("/delete", urlencodedParser, async function(request, response) {
     const uri = "mongodb+srv://j3nqa:093zheka4067@cluster0-ksudn.gcp.mongodb.net/test?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
-        const collection = client.db("schedule").collection("group");
+        const collection = client.db("schedule").collection("groups");
         collection.deleteOne({ _id: new mongodb.ObjectID(`${request.body.id }`)})
 
         client.close();
