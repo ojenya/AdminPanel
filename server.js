@@ -13,7 +13,7 @@ server.set("view engine", "pug");
 const body_parser = require("body-parser");
 server.use(body_parser.json());
 const urlencodedParser = body_parser.urlencoded({ extended: false });
-const port = 4000;
+const port = process.env.PORT || 4000;
 // const port = 60341
 
 server.use(express.urlencoded({
