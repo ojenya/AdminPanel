@@ -1,6 +1,6 @@
+'use strict';
 const express = require("express")
 const server = express();
-// const request = require('request')
 const session = require('express-session')
 const passport = require('passport')
 const mongodb = require('mongodb')
@@ -134,3 +134,5 @@ server.post('/push',(req,res) =>{
 server.listen(port, () => {
     console.log(`Server listening at ${port}`);
 });
+
+module.exports = app;
