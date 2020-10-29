@@ -1,5 +1,5 @@
 {
-    "name": "node_workshop",
+    "name": "admin-panel",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
@@ -14,31 +14,36 @@
         "mongodb": "^3.3.5",
         "morgan": "^1.10.0",
         "node-openvpn": "^0.1.1",
+        "node-fetch": "^2.6.1",
         "nodemon": "^1.19.4",
         "passport": "^0.4.1",
         "passport-local": "^1.0.0",
         "passport-vkontakte": "^0.3.2",
         "pug": "^3.0.0"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.12.3",
+        "@babel/node": "^7.12.1",
+        "@babel/preset-env": "^7.12.1"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server.js"
     },
-    "nodemonConfig": {
-        "ignore": [
-            "data/*"
-        ]
-    },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/lenmorld/node_workshop.git"
+        "url": "git+https://github.com/ojenya/admin-panel.git"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "admin-panel",
+        "vk",
+        "585"
+    ],
+    "author": "Oseledets Evgeniy",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/lenmorld/node_workshop/issues"
+        "url": "https://github.com/ojenya/admin-panel/issues"
     },
-    "homepage": "https://github.com/lenmorld/node_workshop#readme"
+    "homepage": "https://github.com/ojenya/admin-panel#readme"
 }

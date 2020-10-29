@@ -5,14 +5,11 @@ handler.on('click', function (e){
   let form = $(this).parent().serializeArray()
   let obj = {}
   for (let index = 0; index < form.length; index++) {
-    // for (let key in form[index]) {
-      // console.log({name:form[key].name, value:form[key].value})
       obj[form[index].name] = form[index].value
-    // }
   }
   $.ajax({
     type: 'POST',
-    url: '/telegram',
+    url: '/push',
     data: obj
   }).done(msg => {
     $.toast({
@@ -21,45 +18,11 @@ handler.on('click', function (e){
       showHideTransition: 'slide',
       icon: 'success'
   })
-    $('form input[name="group"], form textarea').val('');
+    $('form textarea').val('');
   }
   ).fail(err => {
     console.log(err)
   })
 })
 
-
-const add = $('.add')
-add.on('click', function (e){
-  e.preventDefault()
-  let form = $(this).parent().serializeArray()
-  let obj = {}
-  for (let index = 0; index < form.length; index++) {
-      obj[form[index].name] = form[index].value
-  }
-
-if(obj.group !== '' && obj.course !== ''){
-  $.ajax({
-    type: 'POST',
-    url: '/course/',
-    data: obj
-  }).done(msg => {
-    $.toast({
-      heading: 'Группа успешно добавлена',
-      showHideTransition: 'slide',
-      icon: 'success'
-  })
-  location.reload(true);
-  }).fail(err => {
-    console.log(err)
-  })
-}else{
-  $.toast({
-    heading: 'Группа не добавлена',
-    showHideTransition: 'slide',
-    text:'Нужно заполнить оба поля',
-    icon: 'error'
-})
-}
-})
 

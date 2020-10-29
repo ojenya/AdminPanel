@@ -2,61 +2,20 @@ doctype html
 html
     head
     meta(charset = 'utf-8', lang="ru")
+    link(href='../public/img/favicon.ico')
     style
-        include rasp.css
+        include ../public/style/card.scss
         include ../node_modules/jquery-toast-plugin/src/jquery.toast.css 
-    title IMIT ISU
+    title 585 Золотой
     body
-        div.header
-            form.form(action="/course" method='POST')
-                    div Номер группы 
-                    input(type="text" name="group")
-                    div Курс 
-                    input(type="text" name="course") 
-                    button.add(type='submit') Добавить группу
-        div.wrapper
-            div.leftMenu
-                div.choose.box Выбор группы
-                div.box
-                    div.status Бакалавриат
-                    div.separator
-                    div.bach
-                        a(href="/course/1"): button.btn(type="button") 1 курс 
-                        a(href="/course/2"): button.btn(type="button") 2 курс 
-                        a(href="/course/3"): button.btn(type="button") 3 курс 
-                        a(href="/course/4"): button.btn(type="button") 4 курс 
-                    div.status Магистратура
-                    div.separator
-                    div.master
-                        a(href="/course/5"): button.btn(type="button") 1 курс 
-                        a(href="/course/6"): button.btn(type="button") 2 курс 
-                    div.separator
-                    div.all
-                        a(href="/course/"): button.btn(type="button") Все группы
-                    
-            div.content
-                div.tab
-                    table.table
-                        tr.trHead
-                            td Группа
-                            td Управление
-                        each element in courses
-                            tr
-                                td #{element.group_id} #{element.course}
-                                td
-                                    form
-                                        button.dlt.btn(type="submit" action="/delete" method='POST' data-id=`${element._id}`) Удалить
-                div.sendMessage
-                    form(action="/telegram" method='POST' id='telegramForm' enctype="application/x-www-form-urlencoded" )
-                        div.smGroup Отправить сообщение группе
-                        input.smInput(type="text" name="group" placeholder="Группа")
-                        textarea(name="text", cols="30", rows="10",class="smArea", placeholder="Ваше сообщение",maxlength="4000")
-                        button(type='submit' class="btnSend") Отправить сообщение
+        .wrapper
+            form(action="/push" method='POST' enctype="application/x-www-form-urlencoded" )
+                div.push Отправить push-уведомление
+                textarea(name="text" class="formArea" placeholder="Ваше сообщение" maxlength="50")
+                button(type='submit' class="btnSend") Отправить push-уведомление
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js")
         script 
             include ../node_modules/jquery-toast-plugin/src/jquery.toast.js
-        script
-            include ./btndlt.js 
         script
             include ../public/js/app.js
   

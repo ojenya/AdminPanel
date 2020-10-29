@@ -1,0 +1,79 @@
+.wrapper {
+    font-family: Roboto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100vh;
+    .wrapper__form {
+        background-color: #ffffff;
+        border-radius: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.push {
+    font-size: 25px;
+    margin: 20px auto;
+}
+
+.formArea {
+    height: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #282828;
+    width: 80%;
+    min-height: 150px;
+    margin-top: 20px;
+    max-height: 150px;
+    max-width: 80%;
+    min-width: 80%;
+}
+
+.btnSend {
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    height: 32px;
+    background: #769DD8;
+    border-radius: 2px;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+}
+
+.btnSend:hover {
+    background: #b1d5fd;
+    border: 1px solid #769DD8;
+    color: #666666;
+}
