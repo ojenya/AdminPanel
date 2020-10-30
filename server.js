@@ -1,4 +1,3 @@
-'use strict';
 const express = require("express")
 const server = express();
 const session = require('express-session')
@@ -18,9 +17,7 @@ server.set("view engine", "pug");
 const body_parser = require("body-parser");
 server.use(body_parser.json());
 const urlencodedParser = body_parser.urlencoded({ extended: false });
-const port = 4000;
-
-
+const port = process.env.PORT || 4000
 
 server.use(express.urlencoded({
   extended: false
@@ -134,5 +131,3 @@ server.post('/push',(req,res) =>{
 server.listen(port, () => {
     console.log(`Server listening at ${port}`);
 });
-
-module.exports = app;
