@@ -99,7 +99,7 @@ function sendNotifications(message, user_ids){
 // https://api.vk.com/method/notifications.sendMessage?v=5.110&access_token=7d7966bf7d7966bf7d7966bf587d0d28cf77d797d7966bf22078987bac7c518cd2b3f5b&user_ids=124467110&message=%22qq%22&fragment=%22https://vk.com/app7622256#stock%22
   const v = '5.110'
   const access_token = '7d7966bf7d7966bf7d7966bf587d0d28cf77d797d7966bf22078987bac7c518cd2b3f5b'
-  const fragment = '#stock'
+  const fragment = 'stock'
   fetch(`https://api.vk.com/method/notifications.sendMessage?v=${v}&access_token=${access_token}&user_ids=${user_ids}&message=${message}&fragment=${encodeURIComponent(fragment)}`)
   .then(res => res.text())
   .then(body => console.log(body));
